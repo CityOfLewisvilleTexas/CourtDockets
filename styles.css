@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Assistant:400,700');
+
+* {
+    font-family: 'Assistant', Arial, Helvetica, sans-serif;
+}
+
+table, tr, td {
+    font-family: inherit, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.container#root {
+    max-width: 100% !important;
+    margin-top: 12px;
+}
+#logo {
+    width: 300px;
+    padding: 10px;
+    margin-top: 15px;
+    margin-left: 3px;
+    float: left;
+}
+
+nav {
+    height: 130px;
+}
+
+
+h4 {
+    margin-top: 0px;
+    padding-top: 12px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    margin-top: 4px;
+}
+
+#disclaimer > div > p {
+    text-align: center;
+    line-height: 18px;
+    position: sticky;
+    letter-spacing: 0.4px;
+    font-size: 13px;
+    /* font-weight: bold; */
+}
+
+.red {
+    background-color: #e00000  !important;
+}
+
+.deep-purple {
+    background-color: rgb(52, 30, 105) !important;
+}
+
+.activeParam {
+    color: yellowgreen;
+}
+
+select {
+    display:inline-flex;
+    text-align: center;
+    margin-bottom: 12px;
+    background: white;
+    width: 70%;
+}
+
+div.col.s9 {
+    padding-left: 0;
+}
+
+#root > div > div:nth-child(2) > div.col.s9 > input[type="text"],
+#root > div > div:nth-child(3) > div.col.s9 > input[type="text"] {
+    margin-bottom: 11px;
+    background-color: white !important;
+    text-indent: 12px !important;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #e00000 !important;
+    box-shadow: 0 2px 0 0 #e00000 !important;
+}
+
+select:focus {
+    outline: 1px solid #d35858ee;
+}
+
+#tableContainer > h4 {
+    margin-top: 8px;
+    background: #090909d6;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    color: white;
+}
+
+thead {
+    background-color: lavender;
+    border-bottom: 1px solid;
+}
+
+
+td {
+    border: 1px solid #aaa !important;
+}

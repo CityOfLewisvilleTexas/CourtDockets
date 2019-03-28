@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Court Dockets</title>
+    <!-- jQuery, Polyfill -->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.js"></script>
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Vue -->
+    <script src="http://apps/beta/lib/vue.js"></script>
+    <script src="lib/app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container" id="root">
+            <navbar></navbar>
+            <div class="row left-align">
+                <search-date @change="setLoader":dates="docketDates" @clicked="updateSearchMethod"></search-date>
+                <search-last-name  @change="setLoader" @clicked="updateSearchMethod"></search-last-name>
+                <search-officer-id  @change="setLoader" @clicked="updateSearchMethod"></search-officer-id>
+            </div>
+            <preloader v-if="isLoading !== false"></preloader>
+            <div class="row" id="tableContainer">
+                    <h5 v-if="!activeSearchMethod" class="center-align" style="font-weight: 800;">To view Court Docket information, please search by Date, Last Name, or Officer ID.</h5>
+                    <h4 v-show="activeSearchMethod">{{ activeSearchMethod }} : <span class="activeParam">{{ activeParam }}</span></h4>
+                    <dockets-table :method="activeSearchMethod" :dataset="activeDataSet"></dockets-table>
+                </div>
+        </div>
+    </div>
+
+    <!-- components -->
+    <script src="lib/components/preloader.js"></script>
+    <script src="lib/components/navbar.js"></script>
+    <script src="lib/components/searchDate.js"></script>
+    <script src="lib/components/searchLastName.js"></script>
+    <script src="lib/components/searchOfficerID.js"></script>
+    <script src="lib/components/docketsTable.js"></script>
+    <script src="lib/app.js?v=2"></script>
+</body>
+
+</html>
